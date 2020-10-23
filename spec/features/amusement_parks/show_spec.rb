@@ -24,21 +24,21 @@ describe "As a visitor," do
       )
 
       visit "/parks/#{park.id}"
-
+save_and_open_page
       expect(page).to have_content(park.name)
       expect(page).to have_content("Average Thrill Rating of Rides: #{park.average_thrill_rating}")
 
-      within "#park-#{ride_1.id}" do
+      within "#ride-#{ride_1.id}" do
         expect(page).to have_content(ride_1.name)
         expect(page).to have_content("Thrill Rating: #{ride_1.thrill_rating}")
       end
 
-      within "#park-#{ride_2.id}" do
+      within "#ride-#{ride_2.id}" do
         expect(page).to have_content(ride_2.name)
         expect(page).to have_content("Thrill Rating: #{ride_2.thrill_rating}")
       end
 
-      within "#park-#{ride_3.id}" do
+      within "#ride-#{ride_3.id}" do
         expect(page).to have_content(ride_3.name)
         expect(page).to have_content("Thrill Rating: #{ride_3.thrill_rating}")
       end
