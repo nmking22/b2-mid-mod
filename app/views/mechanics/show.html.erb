@@ -1,0 +1,19 @@
+<h1><%= "Mechanic: #{@mechanic.name}" %></h1>
+
+<h3><%= "Years of Experience: #{@mechanic.years_experience}" %>
+
+<section id='current-rides'>
+  <h4>Current rides they're working on:</h4>
+  <% @mechanic.rides.each do |ride| %>
+    <p><%= "#{ride.name}" %></p>
+  <% end %>
+</section>
+
+<section id='add-rides'>
+  <h4>Add a ride to workload:</h4>
+  <%= form_tag "/mechanics/#{@mechanic.id}" do %>
+    <%= label_tag :name %>
+    <%= text_field_tag :name %>
+    <%= submit_tag "Add Ride" %>
+  <% end %>
+</section>
