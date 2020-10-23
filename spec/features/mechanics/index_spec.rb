@@ -19,11 +19,11 @@ describe "As a user," do
       visit '/mechanics'
 
       expect(page).to have_content("All Mechanics")
-save_and_open_page
+
       within "#mechanic-#{mechanic_1.id}" do
         expect(page).to have_content("#{mechanic_1.name} - #{mechanic_1.years_experience} years of experience")
       end
-      
+
       within "#mechanic-#{mechanic_2.id}" do
         expect(page).to have_content("#{mechanic_2.name} - #{mechanic_2.years_experience} years of experience")
       end
