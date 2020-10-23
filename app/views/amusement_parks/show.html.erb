@@ -2,10 +2,12 @@
 <h4><%= "Admissions: $#{@park.admission_price.round(2)}" %></h4>
 
 <h2>Rides:</h2>
+<ol>
 <% @park.rides.each do |ride| %>
   <section id='ride-<%= ride.id %>'>
-    <h3><%= ride.name %></h3>
+    <li><%= ride.name %></li>
   </section>
 <% end %>
+</ol>
 
 <h4><%= "Average Thrill Rating of Rides: #{@park.average_thrill_rating.round(1)}/10" %></h4>
