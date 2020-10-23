@@ -114,13 +114,53 @@ describe "As a user," do
     end
   end
 end
-# Ex:
-# Mechanic: Kara Smith
-# Years of Experience: 11
-# Current rides they’re working on:
-# The Frog Hopper
-# Fahrenheit
-# The Kiss Raise
-# Add a ride to workload:
-# _pretend_this_is_a_textfield_
-#                       Submit
+
+describe "As a user," do
+  describe "When I visit a mechanic's show page" do
+    it "Then I see all their rides listed in alphabetical order" do
+      mechanic = Mechanic.create!(
+        name: "Daryl",
+        years_experience: 5
+      )
+      park = AmusementPark.create!(
+        name: "Elitch Gardens",
+        admission_price: 30.00
+      )
+      ride_1 = Ride.create!(
+        name: "Tower of Doom",
+        thrill_rating: 9,
+        amusement_park: park
+      )
+      ride_2 = Ride.create!(
+        name: "Boomerang",
+        thrill_rating: 7,
+        amusement_park: park
+      )
+      ride_3 = Ride.create!(
+        name: "Mind Eraser",
+        thrill_rating: 6,
+        amusement_park: park
+      )
+      WorkOrder.create!(
+        mechanic: mechanic,
+        ride: ride_1
+      )
+      WorkOrder.create!(
+        mechanic: mechanic,
+        ride: ride_2
+      )
+      WorkOrder.create!(
+        mechanic: mechanic,
+        ride: ride_3
+      )
+
+      visit "/mechanics/#{mechanic.id}"
+
+      within '#current-rides' do
+        expect(page.all('p')[0]).to have_content(ride_2.name)
+        expect(page.all('p')[1]).to have_content(ride_3.name)
+        expect(page.all('p')[2]).to have_content(ride_1.name)
+      end
+    end
+  end
+end
