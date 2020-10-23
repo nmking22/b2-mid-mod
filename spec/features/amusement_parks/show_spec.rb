@@ -46,11 +46,3 @@ describe "As a visitor," do
     end
   end
 end
-# Ex: Hershey Park
-#    Admissions: $50.00
-#
-#    Rides:
-#           1. Lightning Racer
-#           2. Storm Runner
-#           3. The Great Bear
-#    Average Thrill Rating of Rides: 7.8/10
