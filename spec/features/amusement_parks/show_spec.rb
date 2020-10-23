@@ -24,7 +24,7 @@ describe "As a visitor," do
       )
 
       visit "/parks/#{park.id}"
-save_and_open_page
+
       expect(page).to have_content(park.name)
       expect(page).to have_content("Admissions: $#{park.admission_price.round(2)}")
       expect(page).to have_content("Average Thrill Rating of Rides: #{park.average_thrill_rating.round(1)}/10")
