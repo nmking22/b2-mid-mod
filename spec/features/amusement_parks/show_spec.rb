@@ -26,6 +26,7 @@ describe "As a visitor," do
       visit "/parks/#{park.id}"
 
       expect(page).to have_content(park.name)
+      expect(page).to have_content("Admissions: $#{park.admission_price}")
       expect(page).to have_content("Average Thrill Rating of Rides: #{park.average_thrill_rating.round(1)}")
 
       within "#ride-#{ride_1.id}" do
