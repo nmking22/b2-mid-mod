@@ -37,8 +37,3 @@ save_and_open_page
     end
   end
 end
-
-# Ex:
-#              All Mechanics
-#    Sam Mills - 10 years of experience
-#    Kara Smith - 11 years of experience
