@@ -8,6 +8,6 @@ describe Mechanic, type: :model do
 
   describe "relationships" do
     it {should have_many :work_orders}
-    it {should have_many(:rides), through(:work_orders)}
+    it {should have_many(:rides).through(:work_orders)}
   end
 end

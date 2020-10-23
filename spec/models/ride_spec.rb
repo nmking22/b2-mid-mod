@@ -9,6 +9,6 @@ describe Ride, type: :model do
   describe "relationships" do
     it {should belong_to :amusement_park}
     it {should have_many :work_orders}
-    it {should have_many(:mechanics), through(:work_orders)}
+    it {should have_many(:mechanics).through(:work_orders)}
   end
 end
