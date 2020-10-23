@@ -1,5 +1,5 @@
 <h1><%= @park.name %></h1>
-<h4><%= "Average Thrill Rating of Rides: #{@park.average_thrill_rating.round(1)}" %></h4>
+<h4><%= "Admissions: $#{@park.admission_price.round(2)}" %></h4>
 
 <% @park.rides.each do |ride| %>
   <section id='ride-<%= ride.id %>'>
@@ -7,3 +7,5 @@
     <p><%= "Thrill Rating: #{ride.thrill_rating}" %>
   </section>
 <% end %>
+
+<h4><%= "Average Thrill Rating of Rides: #{@park.average_thrill_rating.round(1)}" %></h4>
