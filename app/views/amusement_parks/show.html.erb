@@ -1,0 +1,8 @@
+<h1><%= @park.name %></h1>
+
+<% @park.rides.each do |ride| %>
+  <section id='ride-<%= ride.id %>'>
+    <h3><%= ride.name %></h3>
+    <p><%= "Thrill Rating: #{ride.thrill_rating}" %>
+  </section>
+<% end %>
