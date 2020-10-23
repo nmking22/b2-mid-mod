@@ -17,7 +17,7 @@ describe "As a user," do
       )
 
       visit '/mechanics'
-save_and_open_page
+
       expect(page).to have_content("All Mechanics")
 
       within "#mechanic-#{mechanic_1.id}" do
