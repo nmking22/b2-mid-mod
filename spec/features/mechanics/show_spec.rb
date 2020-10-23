@@ -50,8 +50,10 @@ describe "As a user," do
         expect(page).to have_content(ride_3.name)
       end
 
-      expect(page).to have_field("Name")
-      expect(page).to have_button("Add Ride")
+      within '#add-rides' do
+        expect(page).to have_field("Name")
+        expect(page).to have_button("Add Ride")
+      end
     end
     describe "When I fill in that field with an id of a ride that exists in the database and I click submit" do
       it "I’m taken back to that mechanics show page and I see the name of that newly added ride on this mechanics show page" do
