@@ -80,7 +80,7 @@ describe "As a user," do
           thrill_rating: 6,
           amusement_park: park
         )
-        ride_3 = Ride.create!(
+        ride_4 = Ride.create!(
           name: "Twister",
           thrill_rating: 4,
           amusement_park: park
@@ -104,7 +104,7 @@ describe "As a user," do
           fill_in "Name", with: "Twister"
           click_button "Submit"
         end
-        
+
         expect(current_path).to eq("/mechanics/#{mechanic.id}")
 
         within '#current-rides' do
